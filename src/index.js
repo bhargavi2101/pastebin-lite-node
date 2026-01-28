@@ -16,6 +16,10 @@ app.use('/api/healthz', healthRoutes);
 app.use('/api/pastes', pasteRoutes.router);
 app.get('/p/:id', pasteRoutes.htmlView);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
-});
+if (require.main === module) {
+  app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running`);
+  });
+}
+
+module.exports = app;
