@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const healthRoutes = require('./routes/health');
 const pasteRoutes = require('./routes/pastes');
-const uiRoutes = require('./routes/ui');
+const uiRoutes = require('../src/routes/ui');
 
 const app = express();
 
